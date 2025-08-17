@@ -14,11 +14,10 @@ class Solution(object):
                    ('I', 1) ]
 
         while value:
-            for ent in romans:
-                n = ent[1]
+            for roman, n in romans:
                 if value >= n:
-                    result += ent[0]
-                    value = value - n
+                    result += roman
+                    value -= n
                     break
 
         return result

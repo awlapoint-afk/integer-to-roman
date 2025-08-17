@@ -7,15 +7,18 @@ class Solution(object):
 
         result = ""
         value = num
-        romans = [ ('M', 1000), ('CM', 900), ('D', 500), ('CD', 400),
-                   ('C', 100), ('XC', 90), ('L', 50), ('XL', 40),
-                   ('X', 10), ('IX', 9), ('V', 5), ('IV', 4), ('I', 1) ]
+        romans = [ ('M', 1000), ('CM', 900), ('D', 500),
+                   ('CD', 400), ('C', 100), ('XC', 90),
+                   ('L', 50), ('XL', 40), ('X', 10),
+                   ('IX', 9), ('V', 5), ('IV', 4),
+                   ('I', 1) ]
 
         while value:
             for ent in romans:
-                if value >= ent[1]:
+                n = ent[1]
+                if value >= n:
                     result += ent[0]
-                    value = value % ent[1] + ((value // ent[1] - 1) * ent[1])
+                    value = value % n + ((value // n - 1) * n)
                     break
 
         return result

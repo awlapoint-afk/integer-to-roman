@@ -18,7 +18,7 @@ class Solution(object):
                 n = ent[1]
                 if value >= n:
                     result += ent[0]
-                    value = value % n + ((value // n - 1) * n)
+                    value = value - n
                     break
 
         return result
